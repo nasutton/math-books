@@ -1,0 +1,120 @@
+\ProvidesPackage{mystyle}
+
+% Languages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Margins
+\usepackage[margin=0.75in]{geometry}
+
+% Math packages
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{thmtools}
+
+% Extra packages
+\usepackage{calc}
+\usepackage{centernot}
+\usepackage{enumerate}
+
+% Graphics packages
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Tikz packages
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+
+% Tikz macros
+\tikzstyle{vertex}=[circle, draw, inner sep=0pt, minimum size=6pt]
+\newcommand{\vertex}{\node[vertex]}
+\newcounter{Angle}
+
+% Typesetting macros
+\renewcommand{\it}[1] {\textit{#1}}
+\renewcommand{\bf}[1] {\textbf{#1}}
+\newcommand{\ul}[1] {\underline{#1}}
+
+% Set macros
+\renewcommand{\emptyset} {\varnothing}
+\newcommand{\bbN} {\ensuremath{\mathbb{N}}}
+\newcommand{\bbZ} {\ensuremath{\mathbb{Z}}}
+\newcommand{\bbQ} {\ensuremath{\mathbb{Q}}}
+\newcommand{\bbR} {\ensuremath{\mathbb{R}}}
+\newcommand{\bbC} {\ensuremath{\mathbb{C}}}
+
+% Theorem environment macros
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	headpunct={},
+	notefont=\normalfont\bfseries,
+	notebraces={}{},
+	bodyfont=\normalfont\itshape
+]{TStyle}
+
+\declaretheorem[style=TStyle,name=Theorem,numberwithin=chapter]{thm}
+\declaretheorem[style=TStyle,name=Corollary,sibling=thm]{cor}
+\declaretheorem[style=TStyle,name=Proposition,sibling=thm]{prop}
+\declaretheorem[style=TStyle,name=Lemma,sibling=thm]{lem}
+\declaretheorem[style=TStyle,name=Conjecture,sibling=thm]{conj}
+
+% Question environment macros
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	headpunct={:},
+	bodyfont=\normalfont\itshape
+]{QStyle}
+
+\declaretheorem[style=QStyle,name=Question,sibling=thm]{quest}
+\declaretheorem[style=QStyle,name=Problem,sibling=thm]{prob}
+
+% Proof environment macros
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	headpunct={.},
+	bodyfont=\normalfont,
+	numbered=no
+]{PStyle}
+
+\declaretheorem[style=PStyle,name=Proof,qed=$\square$]{pf}
+\declaretheorem[style=PStyle,name=Answer,qed=$\diamondsuit$]{ans}
+\declaretheorem[style=PStyle,name=Solution,qed=$\diamondsuit$]{soln}
+\declaretheorem[style=PStyle,name=Construction,qed=$\diamondsuit$]{con}
+
+% Definition environment macros
+\declaretheoremstyle[
+	headfont=\normalfont\bfseries,
+	headpunct={},
+	bodyfont=\normalfont
+]{DStyle}
+
+\declaretheorem[style=DStyle,name=Definition,sibling=thm]{defn}
+\declaretheorem[style=DStyle,name=Example,qed=$\diamondsuit$,sibling=thm]{exmp}
+\declaretheorem[style=DStyle,name=Notation,sibling=thm]{notn}
+\declaretheorem[style=DStyle,name=Addendum,sibling=thm]{addm}
+
+% Exercise environment macros
+\declaretheoremstyle[
+	headfont=\normalfont,
+	headpunct={.},
+	bodyfont=\normalfont
+]{EStyle}
+
+\declaretheorem[style=EStyle,name={},numberwithin=chapter]{exer}
+
+% Remark environment macros
+\declaretheoremstyle[
+	headfont=\normalfont\itshape,
+	headpunct={},
+	bodyfont=\normalfont,
+	numbered=no
+]{RStyle}
+
+\declaretheorem[style=RStyle,name=Remark,qed=$\diamond$]{rem}
+\declaretheorem[style=RStyle,name=Warning,qed=$\diamond$]{warn}
+\declaretheorem[style=RStyle,name=Scholium,qed=$\diamond$]{sch}
+
+% Bibliography environment macros
+\bibliographystyle{plain}

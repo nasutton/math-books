@@ -1,0 +1,47 @@
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\[G:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\vertex (u) at (90:1) [label=above:$u$]{};
+				\vertex (v) at (162:1) [label=left:$v$]{};
+				\vertex (w) at (18:1) [label=right:$w$]{};
+				\vertex (x) at (234:1) [label=left:$x$]{};
+				\vertex (y) at (306:1) [label=right:$y$]{};
+				\path
+					(u) edge (v)
+					(u) edge (w)
+					(v) edge (w)
+					(v) edge (x)
+					(w) edge (x)
+					(x) edge (y)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.4\textwidth}
+		\[\raisebox{-.6\height}
+		{
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\vertex (u) at (90:1){};
+				\vertex (v) at (162:1){};
+				\vertex (w) at (18:1){};
+				\vertex (x) at (234:1){};
+				\vertex (y) at (306:1){};
+				\path
+					(u) edge (v)
+					(u) edge (w)
+					(v) edge (w)
+					(v) edge (x)
+					(w) edge (x)
+					(x) edge (y)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}
+	\caption{A labeled graph and an unlabeled graph}
+\end{figure}

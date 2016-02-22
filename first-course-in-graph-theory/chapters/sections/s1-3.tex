@@ -1,0 +1,130 @@
+\section{Common Classes of Graphs}
+As we continue to study graphs, we will see that there are certain graphs that are encountered often and it is useful to be familiar with them. In many instances, there is a special notation reserved for these graphs.
+
+We have already seen that paths and cycles are certain kinds of walks and subgraphs in graphs. These terms are also used to describe certain kinds of graphs. If the vertices of a graph $G$ of order $n$ can be labeled (or relabeled) $v_{1},v_{2},\ldots,v_{n}$ so that its edges are $v_{1}v_{2},v_{2}v_{3},\ldots,v_{n-1}v_{n}$, then $G$ is called a \bf{path}; while if the vertices of a graph $G$ of order $n \geq 3$ can be labeled (or relabeled) $v_{1},v_{2},\ldots,v_{n}$ so that its edges are $v_{1}v_{2},v_{2}v_{3},\ldots,v_{n-1}v_{n}$ and $v_{1}v_{n}$, then $G$ is called a \bf{cycle}. A graph that is a path of order $n$ is denoted by $P_{n}$, while a graph that is a cycle of order $n \geq 3$ is denoted by $C_{n}$. Several paths and cycles are shown in Figure 1.21.
+
+\input{./figures/f1-21}
+
+A graph $G$ is \bf{complete} if every two distinct vertices of $G$ are adjacent. A complete graph of order $n$ is denoted by $K_{n}$. Therefore, $K_{n}$ has the maximum possible size for a graph with $n$ vertices. Since every two distinct vertices of $K_{n}$ are joined by an edge, the number of pairs of vertices in $K_{n}$ is $n \choose 2$ and so
+\begin{equation}
+\text{the size of $K_{n}$ is $n \choose 2$} = \frac{n(n-1)}{2}.
+\end{equation}
+Therefore, the complete graph $K_{3}$ has three edges, $K_{4}$ has six edges and $K_{5}$ has ten edges. The five smallest complete graphs are shown in Figure 1.22. Notice that $P_{1}$ and $K_{1}$ represent the same graph, as do $P_{2}$ and $K_{2}$, as well as $C_{3}$ and $K_{3}$. Although there are edges that cross in the drawings of $K_{4}$ and $K_{5}$, the points of intersection do not represent vertices.
+
+\input{./figures/f1-22}
+
+The graphs that are drawn in Figures 1.21 and 1.22 bring up some points that need to be discussed. Although we have attempted to draw these graphs in a manner that makes them easy to visualize, this is certainly not a requirement when drawing a graph, as its vertices can be placed in any convenient location. Figure 1.23 shows a variety of ways to draw the path $P_{4}$ and the complete graph $K_{4}$.
+
+\input{./figures/f1-23}
+
+Since the disconnected graph $G$ in Figure 1.24 has two components that are complete graphs of order 4, one that is $C_{5}$ and one that is $P_{3}$, we write this graph as $G = 2K_{4} \union C_{5} \union P_{3}$.
+
+\input{./figures/f1-24}
+
+The \bf{complement} $\overline{G}$ of a graph $G$ is that graph whose vertex set is $V(G)$ and such that for each pair $u,v$ of distinct vertices of $G$, $uv$ is an edge of $\overline{G}$ if and only if $uv$ is not an edge of $G$. Observe that if $G$ is a graph of order $n$ and size $m$, then $\overline{G}$ is a graph of order $n$ and size $n \choose 2 - m$. The graph $\overline{K_{n}}$ then has $n$ vertices and no edges; it is called the \bf{empty graph} of order $n$. Therefore, empty graphs have empty edge sets. In fact, if $G$ is any graph of order $n$, then $G-E(G)$ is the empty graph $\overline{K_{n}}$. By definition, no graph can have an empty vertex set. A graph $H$ and its complement are shown in Figure 1.25. Both of these graphs are connected. Although a graph and its complement need not both be connected, at least one must be connected.
+
+\input{./figures/f1-25}
+
+\begin{thm}
+If $G$ is a disconnected graph, then $\overline{G}$ is connected.
+\end{thm}
+
+\begin{pf}
+Since $G$ is disconnected, $G$ contains two or more components. Let $u$ and $v$ be two vertices of $\overline{G}$. We show that $u$ and $v$ are connected in $\overline{G}$. If $u$ and $v$ belong to different components of $G$, then $u$ and $v$ are not adjacent in $G$ and so $u$ and $v$ are adjacent in $\overline{G}$. Hence $\overline{G}$ contains a $u-v$ path of length 1. Suppose next that $u$ and $v$ belong to the same component of $G$. Let $w$ be a vertex of $G$ that belongs to a different component of $G$. Then $uw,vw \centernot\in E(G)$, implying that $uw,vw \in E(\overline{G})$ and so $(u,w,v)$ is a $u-v$ path in $\overline{G}$.
+\end{pf}
+
+We now turn to graphs whose vertex sets can be partitioned in special ways. A graph $G$ is a \bf{bipartite graph} if $V(G)$ can be partitioned into two subsets $U$ and $W$, called \bf{partite sets}, such that every edge of $G$ joins a vertex of $U$ and a vertex of $W$. It's not always easy to tell at a glance whether a graph is bipartite. For example, the connected graphs $G_{1}$ and $G_{2}$ of Figure 1.26 are bipartite, as every edge of $G_{1}$ joins a vertex of $U_{1} = \{u_{1},x_{1},y_{1}\}$ and a vertex of $W_{1} = \{v_{1},w_{1}\}$, while every edge of $G_{2}$ joins a vertex of $U_{2} = \{u_{2},w_{2},y_{2}\}$ and a vertex of $W_{2} = \{v_{2},x_{2},z_{2}\}$. The bipartite nature of these graphs is illustrated in Figure 1.26. By letting $U = U_{1} \union U_{2}$ and $W = W_{1} \union W_{2}$, we see that every edge of $G = G_{1} \union G_{2}$ joins a vertex of $U$ and a vertex of $W$. This illustrates the observation that a graph is bipartite if and only if each of its components is bipartite.
+
+Certainly not every graph is bipartite. For example, consider the 5-cycle $C_{5}$ in Figure 1.27. If $C_{5}$ were bipartite, then its vertex set could be partitioned into two sets $U$ and $W$ such that every edge of $C_{5}$ joins a vertex of $U$ and a vertex of $W$. The vertex $v_{1}$ must belong to either $U$ or $W$, say $v_{1} \in U$. Since $v_{1}v_{2}$ is an edge of $C_{5}$, it follows that $v_{2} \in W$. Since $v_{2}v_{3}$ is an edge of $C_{5}$, it follows that $v_{3} \in U$. Similarly, $v_{4} \in W$ and $v_{5} \in U$. However, $v_{1},v_{5} \in U$ and $v_{1}v_{5}$ is an edge of $C_{5}$. This is a contradiction. Therefore, $C_{5}$ is not bipartite. In fact, no odd cycle is bipartite. Indeed, any graph that contains an odd cycle is not bipartite. The converse is true as well, which may come as a surprise.
+
+\input{./figures/f1-26}
+\input{./figures/f1-27}
+
+\begin{thm}
+A nontrivial graph $G$ is a bipartite graph if and only if $G$ contains no odd cycles.
+\end{thm}
+
+\begin{pf}
+We have already seen that if a graph contains an odd cycle, then it's not bipartite. To prove the converse, let $G$ be a nontrivial graph having no odd cycles. We show that $G$ is bipartite. Because of our earlier observation that a graph is bipartite if and only if each of its components is bipartite, we may assume that $G$ is connected. Let $u$ be any vertex of $G$, let $U$ consist of all vertices of $G$ whose distance from $u$ is even and let $W$ consist of all vertices whose distance from $u$ is odd. Thus $\{U,W\}$ is a partition of $V(G)$. Since $d(u,u)=0$, it follows that $u \in U$. We claim that every edge of $G$ joins a vertex of $U$ and a vertex of $W$.
+
+Assume, to the contrary, that there exist two adjacent vertices in $U$ or two adjacent vertices in $W$. Since these two situations are similar, we will assume that there are vertices $v$ and $w$ in $W$ such that $vw \in E(G)$. Since $d(u,v)$ and $d(u,w)$ are both odd, $d(u,v) = 2s+1$ and $d(u,w) = 2t+1$ for nonnegative integers $s$ and $t$. Let $P' = (u = v_{0},v_{1},\ldots,v_{2s+1} = v)$ be a $u-v$ geodesic and let $P'' = (u = w_{0},w_{1},\ldots,w_{2t+1} = w)$ be a $u-w$ geodesic in $G$. Certainly, $P'$ and $P''$ have their initial vertex $u$ in common but they may have other vertices in common as well. Among the vertices $P'$ and $P''$ have in common, let $x$ be the last vertex. Perhaps $x = u$. In any case, $x = v_{i}$ for some integer $i \geq 0$. Thus $d(u,v_{i}) = i$. Since $x$ is on $P''$ and $w_{i}$ is the only vertex of $P''$ where distance from $u$ is $i$, it follows that $x = w_{i}$. So $x = v_{i} = w_{i}$. However, then, $C = (v_{i},v_{i+1},\ldots,v_{2s+1},w_{2t+1},w_{2t},\ldots,w_{i} = v_{i})$ is a cycle of length
+\begin{align*}
+[(2s+1)-i]+[(2t+1)-i]+1 = 2s+2t-2i+3 = 2(s+t-i+1)+1
+\end{align*}
+and so $C$ is an odd cycle, which is a contradiction.
+\end{pf}
+
+We know that if $G$ is a bipartite graph, then $V(G)$ can be partitioned into two subsets $U$ and $W$, called partite sets, such that every edge of $G$ joins a vertex of $U$ and a vertex of $W$. However, this does not mean that every vertex of $U$ is adjacent to every vertex of $W$. If this does happen, however, then we call $G$ a \bf{complete bipartite graph}. A complete bipartite graph with $|U| = s$ and $|W| = t$ is denoted $K_{s,t}$ or $K_{t,s}$. If either $s=1$ or $t=1$, then $K_{s,t}$ is a \bf{star}. Several complete bipartite graphs are shown in Figure 1.28, including the star $K_{1,3}$. Observe that $K_{2,2}$ is the same graph as $C_{4}$, although it is certainly not drawn the same way that we drew $C_{4}$ in Figure 1.21. When two graphs $G$ and $H$ are the same except possibly for the way that they're drawn or their vertices are labeled, then we write $G \cong H$. (The technical term for this is that these graphs are isomorphic. We'll discuss this in Chapter 3.) If the structures of $G$ and $H$ are different, then we write $G \centernot\cong H$.
+
+\input{./figures/f1-28}
+
+Bipartite graphs belong to a more general class of graphs. A graph $G$ is a $k$\bf{-partite graph} if $V(G)$ can be partitioned into $k$ subsets $V_{1},V_{2},\ldots,V_{k}$ (once again called \bf{partite sets}) such that if $uv$ is an edge of $G$, then $u$ and $v$ belong to different partite sets. If, in addition, every two vertices in different partite sets are joined by an edge, then $G$ is a \bf{complete} $k$\bf{-partite graph}. If $|V_{i}| = n_{i}$ for $1 \leq i \leq k$, then we denote this complete $k$-partite graph by $K_{n_{1},n_{2},\ldots,n_{k}}$. The complete $k$-partite graphs are also referred to as \bf{complete multipartite graphs}. If $n_{i}=1$ for every $i$ $(1 \leq i \leq k)$, then $K_{n_{1},n_{2},\ldots,n_{k}}$ is the complete graph $K_{k}$. Complete 2-partite graphs are thus complete bipartite graphs. Several complete multipartite graphs are shown in Figure 1.29.
+
+\input{./figures/f1-29}
+
+There are several ways to produce a new graph from a given pair of graphs. For two vertex-disjoint graphs $G$ and $H$, we have already mentioned the union $G \union H$ of $G$ and $H$ as that (disconnected) graph with vertex set $V(G) \union V(H)$ and edge set $E(G) \union E(H)$. The \bf{join} $G+H$ consists of $G \union H$ and all edges joining a vertex of $G$ and a vertex of $H$. The join of $P_{3}$ and $K_{2}$ is shown in Figure 1.30.
+
+\input{./figures/f1-30}
+
+For two graphs $G$ and $H$, the \bf{Cartesian product} $G \times H$ has vertex set $V(G \times H) = V(G) \times V(H)$, that is, every vertex of $G \times H$ is an ordered pair $(u,v)$, where $u \in V(G)$ and $v \in V(H)$. The Cartesian product of $G$ and $H$ is often denoted by $G \square H$ as well. Two distinct vertices $(u,v)$ and $(x,y)$ are adjacent in $G \times H$ if either (1) $u=x$ and $vy \in E(H)$ or (2) $v=y$ and $ux \in E(G)$. Figure 1.31 shows the Cartesian product of $P_{3}$ and $K_{2}$.
+
+\input{./figures/f1-31}
+
+Some additional comments about Cartesian products of graphs are useful. First, the definition of Cartesian product tells us that the order in which the graphs $G$ and $H$ are written is structurally irrelevant, that is, $G \times H$ and $H \times G$ are the same graph, that is, they are isomorphic graphs.
+
+There is an informal way of drawing the graph $G \times H$ (or $H \times G$) that doesn't require us to label the vertices. Replace each vertex $x$ of $G$ by a copy $H_{x}$ of the graph $H$. Let $u$ and $v$ be two vertices of $G$. If $u$ and $v$ are adjacent in $G$, then we join the corresponding vertices of $H_{u}$ and $H_{v}$ by an edge. If $u$ and $v$ are not adjacent in $G$, then we add no edges between $H_{u}$ and $H_{v}$. This is illustrated in Figure 1.32.
+
+\input{./figures/f1-32}
+
+Notice that $K_{2} \times K_{2}$ is the 4-cycle. The Graph $C_{4} \times K_{2}$ is often denoted by $Q_{3}$ and is called the 3\bf{-cube}. More generally, we define $Q_{1}$ to be $K_{2}$ and for $n \geq 2$, define $Q_{n}$ to be $Q_{n-1} \times K_{2}$. The graphs $Q_{n}$ are then called $n$\bf{-cubes}. or \bf{hypercubes}. The $n$-cube can also be defined as that graph whose vertex set is the set of ordered $n$-tuples of 0s and 1s (commonly called $n$\bf{-bit strings}) and where two vertices are adjacent if their ordered $n$-tuples differ in exactly one position (coordinate). The $n$-cubes for $n = 1,2,3$ are shown in Figure 1.33, where their vertices are labeled by $n$-bit strings.
+
+\input{./figures/f1-33}
+
+\begin{exers}\end{exers}
+
+\begin{exer}
+Draw the graph $3P_{4} \union 2C_{4} \union K_{4}$.
+\end{exer}
+
+\begin{exer}
+Let $G$ be a disconnected graph. By Theorem 1.11, $\overline{G}$ is connected. Prove that if $u$ and $v$ are any two vertices of $\overline{G}$, then $d_{\overline{G}}(u,v)=1$ or $d_{\overline{G}}(u,v)=2$. Therefore, if $G$ is a disconnected graph, then $diam(\overline{G}) \leq 2$.
+\end{exer}
+
+\begin{exer}
+Consider the following question: For a given positive integer $k$, does there exist a connected graph $G$ whose complement $\overline{G}$ is also connected and contains four distinct vertices $u,v,x,y$ for which $d_{G}(u,v)=k=d_{\overline{G}}(x,y)$?
+\begin{enumerate}[{(a)}]
+\item Show that the answer to this question is yes if $k=1$ or $k=2$.
+\item Find the largest value of $k$ for which the answer to this question is yes.
+\end{enumerate}
+\end{exer}
+
+\begin{exer}
+\input{./figures/f1-34}
+
+Determine whether the graphs $G_{1}$ and $G_{2}$ of Figure 1.34 are bipartite. If a graph is bipartite, then redraw it indicating the partite sets; if not, then give an explanation as to why the graph is not bipartite.
+\end{exer}
+
+\begin{exer}
+Let $G$ be a graph of order 5 or more. Prove that at most one of $G$ and $\overline{G}$ is bipartite.
+\end{exer}
+
+\begin{exer}
+Suppose that the vertex set of a graph $G$ is a (finite) set of integers. Two vertices $x$ and $y$ are adjacent if $x+y$ is odd. To which well-known class of graphs is $G$ a member?
+\end{exer}
+
+\begin{exer}
+For the following pairs $G,H$ of graphs, draw $G+H$ and $G \times H$.
+\begin{enumerate}[{(a)}]
+\item $G=K_{5}$ and $H=K_{2}$.
+\item $G=\overline{K_{5}}$ and $H=\overline{K_{3}}$.
+\item $G=C_{5}$ and $H=K_{1}$.
+\end{enumerate}
+\end{exer}
+
+\begin{exer}
+We have seen that for $n \geq 1$, the $n$-cube $Q_{n}$ is that graph whose vertex set is the set of $n$-bit strings, where two vertices of $Q_{n}$ are adjacent if they differ in exactly one coordinate.
+\begin{enumerate}[{(a)}]
+\item For $n \geq 2$, define the graph $R_{n}$ to be that graph whose vertex set is the set of $n$-bit strings, where two vertices of $R_{n}$ are adjacent if they differ in exactly two coordinates. Draw $R_{2}$ and $R_{3}$.
+\item For $n \geq 3$, define the graph $S_{n}$ to be that graph whose vertex set is the set of $n$-bit strings, where two vertices of $S_{n}$ are adjacent if they differ in exactly three coordinates. Draw $S_{3}$ and $S_{4}$.
+\end{enumerate}
+\end{exer}

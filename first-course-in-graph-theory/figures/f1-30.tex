@@ -1,0 +1,61 @@
+\begin{figure}[h]
+	\centering
+	%P3
+	\begin{subfigure}[b]{.3\textwidth}
+		\[P_{3}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2} {
+					\vertex (\i) at (0,\i){};
+				}
+				\path
+					(0) edge (1)
+					(1) edge (2)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K2
+	\begin{subfigure}[b]{.3\textwidth}
+		\[K_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {0/.5,1/1.5} {
+					\fvertex (\i) at (0,\j){};
+				}
+				\path
+					(0) edge (1)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P3+K2
+	\begin{subfigure}[b]{.3\textwidth}
+		\[P_{3} + K_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2} {
+					\vertex (\i) at (0,\i){};
+				}
+				\foreach \i/\j in {3/.5,4/1.5} {
+					\fvertex (\i) at (1,\j){};
+				}
+				\path
+					(0) edge (1)
+					(0) edge (3)
+					(0) edge (4)
+					(1) edge (2)
+					(1) edge (3)
+					(1) edge (4)
+					(2) edge (3)
+					(2) edge (4)
+					(3) edge (4)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{The join of two graphs}
+\end{figure}

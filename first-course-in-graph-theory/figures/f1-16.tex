@@ -1,0 +1,23 @@
+\begin{figure}[h]
+	\[G:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+			\foreach \i/\j in {1/u, 0/v, 2/x, 3/y} {
+				\setcounter{Angle}{45 + \i * 360 / 4};
+				\vertex (\j) at (\theAngle:1) [label=\theAngle:$\j$]{};
+			}
+			\vertex (w) at (0,0) [label=above:$w$]{};
+			\path
+				(u) edge (v)
+				(u) edge (w)
+				(v) edge (w)
+				(v) edge (y)
+				(w) edge (x)
+				(w) edge (y)
+				(x) edge (y)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{Illustrating walks in a graph}
+\end{figure}

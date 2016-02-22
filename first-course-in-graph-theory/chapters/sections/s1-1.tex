@@ -1,0 +1,156 @@
+\section{Graphs and Graph Models}
+A major publishing company has ten editors (referred to by 1, 2,\ldots, 10) in the scientific, technical and computing areas. These ten editors have a standard meeting time during the first Friday of every month and have divided themselves into seven committees to meet later in the day to discuss specific topics of interest to the company, namely, advertising, securing reviewers, contacting new potential authors, finances, used and rented copies, electronic editions and competing textbooks. This leads us to our first example.
+
+\begin{exmp}
+The ten editors have decided on the seven committees: $c_{1}$ = \{1,2,3\}, $c_{2}$ = \{1,3,4,5\}, $c_{3}$ = \{2,5,6,7\}, $c_{4}$ = \{4,7,8,9\}, $c_{5}$ = \{2,6,7\}, $c_{6}$ = \{8,9,10\}, $c_{7}$ = \{1,3,9,10\}. They have set aside three time periods for the seven committees to meet on those Fridays when all ten editors are present. Some pairs of committees cannot meet during the same period because one or two of the editors are on both committees. This situation can be modeled visually as shown in Figure 1.1.
+
+\input{./figures/f1-1}
+
+In this figure, there are seven small circles, representing the seven committees and a straight line segment is drawn between two circles if the committees they represent have at least one committee member in common. In other words, a straight line segment between two small circles (committees) tells us that these two committees should not be scheduled to meet at the same time. This gives us a picture or a "model" of the committees and the overlapping nature of their membership.
+\end{exmp}
+
+What we have drawn in Figure 1.1 is called a graph. Formally, a \bf{graph} $G$ consists of a finite nonempty set $V$ of objects called \bf{vertices} (the singular is \bf{vertex}) and a set $E$ of 2-element subsets of $V$ called \bf{edges}. The sets $V$ and $E$ are the \bf{vertex set} and \bf{edge set} of $G$, respectively. So a graph $G$ is a pair (actually an \it{ordered} pair) of two sets $V$ and $E$. For this reason, some write $G = (V,E)$. At times, it is useful to write $V(G)$ and $E(G)$ rather than $V$ and $E$ to emphasize that these are the vertex and edge sets of a particular graph $G$. Although $G$ is the common symbol to use for a graph, we also use $F$ and $H$, as well as $G'$, $G''$ and $G_{1}$, $G_{2}$, etc. Vertices are sometimes called \bf{points} or \bf{nodes} and edges are sometimes called \bf{lines}. Indeed, there are some who use the term \bf{simple graph} for what we call a graph. Two graphs $G$ and $H$ are \bf{equal} if $V(G) = V(H)$ and $E(G) = E(H)$, in which case we write $G = H$.
+
+It is common to represent a graph by a diagram in the plane (as we did in Figure 1.1) where the vertices are represented by points (actually small circles -- open or solid) and whose edges are indicated by the presence of a line segment or curve between the two points in the plane corresponding to the appropriate vertices. The diagram itself is then also referred to as a graph. For the graph $G$ of Figure 1.1 then, the vertex set of $G$ is $V(G) = \{c_{1},c_{2},\ldots,c_{7}\}$ and the edge set of $G$ is
+\begin{align*}
+E(G) = &\{\{c_{1},c_{2}\},\{c_{1},c_{3}\},\{c_{1},c_{5}\},\{c_{1},c_{7}\},\{c_{2},c_{3}\},\{c_{2},c_{4}\},\{c_{2},c_{7}\},\\
+&\{c_{3},c_{4}\},\{c_{3},c_{5}\},\{c_{4},c_{5}\},\{c_{4},c_{6}\},\{c_{6},c_{7}\}\}.
+\end{align*}
+
+Let's consider another situation. Have you ever encountered this sequence of integers before?
+\begin{align*}
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots
+\end{align*}
+Every integer in the sequence is the sum of the two integers immediately preceding it (except for the first two integers of course). These numbers are well known in mathematics and are called the \bf{Fibonacci numbers}. In fact, these integers occur so often that there is a journal (\it{The Fibonacci Quarterly}, frequently published \it{five} times a year!) devoted to the study of their properties. Our second example concerns these numbers.
+
+\begin{exmp}
+Consider the set $S$ = \{2,3,5,8,13,21\} of six specific Fibonacci numbers. There are some pairs of distinct integers belonging to $S$ whose sum or difference (in absolute value) also belongs to $S$, namely, \{2,3\}, \{2,5\}, \{3,5\}, \{3,8\}, \{5,8\}, \{5,13\}, \{8,13\}, \{8,21\} and \{13,21\}. There is a more visual way of identifying these pairs, namely by the graph $H$ of Figure 1.2. In this case, $V(H) = \{2,3,5,8,13,21\}$ and
+\begin{align*}
+E(H) = \{\{2,3\},\{2,5\},\{3,5\},\{3,8\},\{5,8\},\{5,13\},\{8,13\},\{8,21\},\{13,21\}\}.
+\end{align*}
+\end{exmp}
+
+\input{./figures/f1-2}
+
+When dealing with graphs, it is customary and simpler to represent an edge $\{u,v\}$ by $uv$ (or $vu$). If $uv$ is an edge of $G$, then $u$ and $v$ are said to be \bf{adjacent} in $G$. The number of vertices in $G$ is often called the \bf{order} of $G$, while the number of edges is its \bf{size}. Since the vertex set of every graph is nonempty, the order of every graph is at least 1. A graph with exactly one vertex is called a \bf{trivial graph}, implying that the order of a \bf{nontrivial graph} is at least 2. The graph $G$ of Figure 1.1 has order 7 and size 13, while the graph $H$ of Figure 1.2 has order 6 and size 9. We often use $n$ and $m$ for the order and size, respectively, of a graph. So, for the graph $G$ of Figure 1.1, $n = 7$ and $m = 13$; while for the graph $H$ of Figure 1.2, $n = 6$ and $m = 9$.
+
+A graph $G$ with $V(G) = \{u,v,w,x,y\}$ and $E(G) = \{uv,uw,vw,vx,wx,xy\}$ is shown in Figure 1.3(a). There are occasions when we are interested in the structure of a graph and not in what the vertices are called. In this case, a graph is drawn without labeling its vertices. For this reason, the graph $G$ of Figure 1.3(a) is a \bf{labeled graph} and Figure 1.3(b) represents an \bf{unlabeled graph}.
+
+\input{./figures/f1-3}
+
+Let us now turn to yet another situation.
+
+\begin{exmp}
+Suppose that we have two coins, one silver and one gold, placed on two of the four squares of a $2 \times 2$ checkerboard. There are twelve such configurations, shown in Figure 1.4, where the shaded coin is the gold coin.
+
+\input{./figures/f1-4}
+
+A configuration can be transformed into other configuration according to certain rules. Specifically, we say that the configuration $c_{i}$ can be transformed into the configuration $c_{j}$ $(1 \leq i, j \leq 12, i \neq j)$ if $c_{j}$ can be obtained from $c_{i}$ by performing exactly one of the following two steps:
+\begin{enumerate}[{(1)}]
+\item moving one of the coins in $c_{i}$ horizontally or vertically to an unoccupied square;
+\item interchanging the two coins in $c_{i}$.
+\end{enumerate}
+Necessarily, if $c_{i}$ can be transformed into $c_{j}$, then $c_{j}$ can be transformed into $c_{i}$. For example, $c_{2}$ can be transformed (i) into $c_{1}$ by shifting the silver coin in $c_{2}$ to the right, (ii) into $c_{4}$ by shifting the gold coin to the right or (iii) into $c_{8}$ by interchanging the two coins (see Figure 1.5).
+
+\input{./figures/f1-5}
+
+Now consider the twelve configurations shown in Figure 1.4. Some pairs $c_{i}, c_{j}$ of these configurations, where $1 \leq i, j \leq 12, i \neq j$, can be transformed into each other and some pairs cannot. This situation can also be represented by a graph $F$ where $V(F) = \{c_{1},c_{2},\ldots,c_{12}\}$ and $c_{i}c_{j}$ is an edge of $F$ if $c_{i}$ and $c_{j}$ can be transformed into each other. This graph $F$ is shown in Figure 1.6.
+\end{exmp}
+
+\input{./figures/f1-6}
+
+Let's look at a somewhat related example.
+
+\begin{exmp}
+Suppose that we have a collection of 3-letter English words, say
+\begin{align*}
+ACT, AIM, ARC, ARM, ART, CAR, CAT, OAR, OAT, RAT, TAR.
+\end{align*}
+We say that a word $W_{1}$ can be transformed into a word $W_{2}$ if $W_{2}$ can be obtained from $W_{1}$ by performing exactly one of the following two steps:
+\begin{enumerate}[{(1)}]
+\item interchanging two letters of $W_{1}$;
+\item replacing a letter in $W_{1}$ by another letter.
+\end{enumerate}
+Therefore, if $W_{1}$ can be transformed into $W_{2}$, then $W_{2}$ can be transformed into $W_{1}$. This situation can be modeled by a graph $G$, where the given words are the vertices of $G$ and two vertices are adjacent in $G$ if the corresponding words can be transformed into each other. This graph is called \bf{the word graph of the set of words}. For the 11 words above, its word graph $G$ is shown in Figure 1.7.
+
+\input{./figures/f1-7}
+
+In this case, a graph $G$ is called \bf{a word graph} if $G$ is the word graph of some set $S$ of 3-letter words. For example, the (unlabeled) graph $G$ of Figure 1.8(a) is a word graph because it is the word graph of the set $S = \{BAT, BIT, BUT, BAD, BAR, CAT, HAT\}$, as shown in Figure 1.8(b). (This idea is related to the concept of "isomorphic graphs," which will be discussed in Chapter 3.)
+\end{exmp}
+
+\input{./figures/f1-8}
+
+We conclude this section with one last example.
+
+\begin{exmp}
+Figure 1.9 shows the traffic lanes at the intersection of two busy streets. When a vehicle approaches this intersection, it could be in one of the nine lanes: L1, L2, \ldots, L9.
+
+\input{./figures/f1-9}
+
+This intersection has a traffic light that informs drivers in vehicles in the various lanes when they are permitted to proceed through the intersection. To be sure, there are pairs of lanes containing vehicles that should not enter the intersection at the same time, such as L1 and L7. However, there would be no difficulty for vehicles in L1 and L5 to drive through this intersection at the same time. This situation can be represented by the graph $G$ of Figure 1.10, where $V(G)$ = \{L1,L2,\ldots,L9\} and two vertices (lanes) are joined by an edge if vehicles in these two lanes cannot safely enter the intersection at the same time, as there would be a possibility of an accident.
+\end{exmp}
+
+\input{./figures/f1-10}
+
+What we have just seen is how five different situations can be represented by graphs. Actually, in each case, there is a set involved: (1) a set of committees, (2) a set of integers, (3) a set of configurations consisting of two coins on a $2 \times 2$ checkerboard, (4) a set of 3-letter words, (5) a set of traffic lanes at a street intersection. Certain pairs of elements in each set are related in some manner: (1) two committees have a member in common, (2) the sum or difference (in absolute value) of two integers in the set also belongs to the set, (3) two configurations can be transformed into each other according to some rule, (4) two 3-letter words can be transformed into each other by certain movements of letters, (5) cars in certain pairs of traffic lanes cannot enter the intersection at the same time. In each case, a graph $G$ is defined whose vertices are the elements of the set and two vertices of $G$ are adjacent if they are related as described above. The graph $G$ then \it{models} the given situation. Often questions concerning the situations described above arise and can be analyzed by studying the graphs that model them. We will encounter such questions throughout the text and discuss how graphs can be used to help us answer the questions.
+
+\begin{exers}\end{exers}
+
+\begin{exer}
+What is a logical question to ask in Example 1.1? Answer this question.
+\end{exer}
+
+\begin{exer}
+Create an example of your own similar to Example 1.1 with nine editors and eight committees and then draw the corresponding graph.
+\end{exer}
+
+\begin{exer}
+Let $S = \{2,3,4,7,11,13\}$. Draw the graph $G$ whose vertex set is $S$ and such that $ij \in E(G)$ for $i,j \in S$ if $i+j \in S$ or $|i-j| \in S$.
+\end{exer}
+
+\begin{exer}
+Let $S = \{-6,-3,0,3,6\}$. Draw the graph $G$ whose vertex set is $S$ and such that $ij \in E(G)$ for $i,j \in S$ if $i+j \in S$ or $|i-j| \in S$.
+\end{exer}
+
+\begin{exer}
+Create your own set $S$ of integers and draw the graph $G$ whose vertex set is $S$ and such that $ij \in E(G)$ if $i$ and $j$ are related by some rule imposed on $i$ and $j$.
+\end{exer}
+
+\begin{exer}
+Consider the twelve configurations $c_{1},c_{2},\ldots,c_{12}$ in Figure 1.4. For every two configurations $c_{i}$ and $c_{j}$, where $1 \leq i,j \leq 12, i \neq j$, it may be possible to obtain $c_{j}$ from $c_{i}$ by first shifting one of the coins in $c_{i}$ horizontally or vertically \it{and} then interchanging the two coins. Model this by a graph $F$ such that $V(F) = \{c_{1},c_{2},\ldots,c_{12}\}$ and $c_{i}c_{j}$ is an edge of $F$ if $c_{i}$ and $c_{j}$ can be transformed into each other by this 2-step process.
+\end{exer}
+
+\begin{exer}
+Following Example 1.4,
+\begin{enumerate}[{(a)}]
+\item give an example of ten 3-letter words, none of which are mentioned in Example 1.4 and whose corresponding word graph has at least six edges. Draw this graph.
+\item give a set of five 3-letter words whose word graph is shown in Figure 1.11 (with the vertices appropriately labeled).
+\input{./figures/f1-11}
+\item give a set of five 3-letter words whose word graph is shown in Figure 1.12 (with the vertices appropriately labeled).
+\input{./figures/f1-12}
+\end{enumerate}
+\end{exer}
+
+\begin{exer}
+Let $S$ be a finite set of 3-letter and/or 4-letter words. In this case, the word graph $G(S)$ of $S$ is that graph whose vertex set is $S$ and such that two vertices (words) $w_{1}$ and $w_{2}$ are adjacent if either (1) or (2) below occurs:
+\begin{enumerate}[{(1)}]
+\item one of the words can be obtained from the other by replacing one letter by another letter,
+\item $w_{1}$ is a 3-letter word and $w_{2}$ is a 4-letter word and $w_{2}$ can be obtained from $w_{1}$ by the insertion of a single letter (anywhere, including the beginning or the end) into $w_{1}$.
+\end{enumerate}
+\begin{enumerate}[{(a)}]
+\item Find six sets $S_{1},S_{2},\ldots,S_{6}$ of 3-letter and/or 4-letter words so that for each integer $i$ $(1 \leq i \leq 6)$ the graph $G_{i}$ of Figure 1.13 is the word graph of $S_{i}$.
+\item For another graph $H$ (of your choice), determine whether $H$ is a word graph of some set.
+\end{enumerate}
+
+\input{./figures/f1-13}
+\end{exer}
+
+\begin{exer}
+Define a word graph differently from the word graphs defined in Example 1.4 and Exercise 1.8 and illustrate your definition.
+\end{exer}
+
+\begin{exer}
+\input{./figures/f1-14}
+
+Figure 1.14 illustrates the traffic lanes at the intersection of two streets. When a vehicle approaches this intersection, it could be in one of the seven lanes: L1, L2, \ldots, L7. Draw a graph $G$ that models this situation, where $V(G)$ = \{L1,L2,\ldots,L7\} and wher two vertices are joined by an edge if vehicles in these two lanes cannot safely enter this intersection at the same time.
+\end{exer}

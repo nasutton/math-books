@@ -1,0 +1,24 @@
+\begin{figure}[h]
+	\[H:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+			\foreach \i/\j in {1/2, 0/3, 5/5, 4/8, 3/13, 2/21} {
+				\setcounter{Angle}{\i * 360 / 6};
+				\vertex (\j) at (\theAngle:1) [label=\theAngle:$\j$]{};
+			}
+			\path
+				(2) edge (3)
+				(2) edge (5)
+				(3) edge (5)
+				(3) edge (8)
+				(5) edge (8)
+				(5) edge (13)
+				(8) edge (13)
+				(8) edge (21)
+				(13) edge (21)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{Another graph}
+\end{figure}

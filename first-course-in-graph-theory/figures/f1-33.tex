@@ -1,0 +1,70 @@
+\begin{figure}[h]
+	\centering
+	%Q1
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[Q_{1}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1} {
+					\setcounter{Angle}{90 + \i * 360 / 2};
+					\vertex (\i) at (\theAngle:1) [label=\theAngle:$\i$]{};
+				}
+				\path
+					(0) edge (1)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%Q2
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[Q_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {0/11,1/10,2/00,3/01} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (\j) at (\theAngle:1) [label=\theAngle:$\j$]{};
+				}
+				\path
+					(00) edge (01)
+					(00) edge (10)
+					(01) edge (11)
+					(10) edge (11)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%Q3
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[Q_{3}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {0/11,1/10,2/00,3/01} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (0\j) at (\theAngle:1) [label=90+\theAngle:$0\j$]{};
+					\vertex (1\j) at (\theAngle:2.25) [label=\theAngle:$1\j$]{};
+				}
+				\path
+					(000) edge (001)
+					(000) edge (010)
+					(000) edge (100)
+					(001) edge (011)
+					(001) edge (101)
+					(010) edge (011)
+					(010) edge (110)
+					(011) edge (111)
+					(100) edge (101)
+					(100) edge (110)
+					(101) edge (111)
+					(110) edge (111)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{The $n$-cubes for $1 \leq n \leq 3$}
+\end{figure}

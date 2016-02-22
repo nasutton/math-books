@@ -1,0 +1,49 @@
+\section{Multigraphs and Digraphs}
+There are occasions when graphs may not be an appropriate model for a problem we are investigating. We now describe two variations of graphs that we will encounter from time to time. In a graph, two vertices are either adjacent or they are not, that is, two vertices are joined by one edge or no edges. A \bf{multigraph} $M$ consists of a finite nonempty set $V$ of vertices and a set $E$ of edges, where every two vertices of $M$ are joined by a finite number of edges (possibly zero). If two or more edges join the same pair of (distinct) vertices, then these edges are called \bf{parallel edges}. In a \bf{pseudograph}, not only are parallel edges permitted but an edge is also permitted to join a vertex to itself. Such an edge is called a \bf{loop}. If a loop $e$ joins a vertex $v$ to itself, then $e$ is said to be a loop at $v$. There can be any finite number of loops at the same vertex in a pseudograph. In Figure 1.35, $M_{1}$ and $M_{2}$ are multigraphs, $M_{3}$ is a pseudograph and $M_{4}$ is a graph. In fact, $M_{4}$ is a multigraph and all four are pseudographs.
+
+\input{./figures/f1-35}
+
+If $M$ is a multigraph with vertex set $V$, then it is no longer appropriate to regard an edge of $M$ as a 2-element subset of $V$ as we must somehow indicate the multiplicity of the edge.
+
+Let's return to Example 1.2 where we considered the set $S = \{2,3,5,8,13,21\}$ as well as those pairs of integers of $S$ whose sum or difference (in absolute value) belongs to $S$. The graph $H$ of Figure 1.2 models this situation. In $H$ there is an edge joining the vertices 3 and 5, indicating that $3+5 \in S$ or $|3-5| \in S$. In this case, however, \it{both} $3+5 \in S$ and $|3-5| \in S$, but there is no way of knowing this from $H$. The multigraph $M$ of Figure 1.36 supplies this information. However, even in this case, the existence of a single edge between a pair $i,j$ of vertices doesn't tell us whether $i+j \in S$ or $|i-j| \in S$; it only tells us that one of these occurs. Thus the multigraph $M$ of Figure 1.36 is a better model of this situation.
+
+\input{./figures/f1-36}
+
+A \bf{digraph} (or \bf{directed graph}) $D$ is a finite nonempty set $V$ of objects called \bf{vertices} together with a set $E$ of \it{ordered pairs} of distinct vertices. The elements of $E$ are called \bf{directed edges} or \bf{arcs}. If $(u,v)$ is a directed edge, then we indicate this in a diagram representing $D$ by drawing a directed line segment or curve from $u$ to $v$. Then $u$ is said to be \bf{adjacent to} $v$ and $v$ is \bf{adjacent from} $u$. The vertices $u$ and $v$ are also said to be \bf{incident with} the directed edge $(u,v)$. If, in the definition of \it{digraph}, for each pair $u,v$ of distinct vertices, at most one of $(u,v)$ and $(v,u)$ is a directed edge, then the resulting digraph is an \bf{oriented graph}. Thus an oriented graph $D$ is obtained by assigning a direction to each edge of some \it{graph} $G$. The digraph $D$ is also called an \bf{orientation} of $G$. Figure 1.37 shows two digraphs $D_{1}$ and $D_{2}$, where $D_{2}$ is an oriented graph but $D_{1}$ is not.
+
+\input{./figures/f1-37}
+
+Next, we return to Example 1.3, where we considered twelve configurations of two coins (one silver, one gold), which were denoted by $c_{1},c_{2},\ldots,c_{12}$. Now, we say that $c_{i}$ can be transformed into $c_{j}$ if $c_{j}$ can be obtained by moving one of the coins in $c_{i}$ to the right or up. Modeling this situation requires a digraph, namely, the digraph $D$ shown in Figure 1.38, which is an oriented graph.
+
+\input{./figures/f1-38}
+
+\begin{exers}\end{exers}
+
+\begin{exer}
+\begin{enumerate}[{(a)}]
+\item Let $S = \{2,3,4,7,11,13\}$. Construct the multigraph $M$ whose vertex set is $S$ and where $ij$ is an edge for distinct elements $i$ and $j$ in $S$ whenever $i+j \in S$ and $ij$ is an edge whenever $|i-j| \in S$. In other words, $i$ and $j$ are joined by two edges if both $i+j \in S$ and $|i-j| \in S$.
+\item How are the problem and solution in (a) affected if we remove the word "distinct"?
+\end{enumerate}
+\end{exer}
+
+\begin{exer}
+Consider the twelve configurations $c_{i}$, $1 \leq i \leq 12$, in Figure 1.38. Draw the digraph $D$, where $V(D) = \{c_{1},c_{2},\ldots,c_{12}\}$ and where $(c_{i},c_{j})$ is a directed edge of $D$ if it is possible to obtain $c_{j}$ by rotating the configuration $c_{i}$ either $\degree{90}$ or $\degree{180}$ clockwise about the midpoint of the checkerboard.
+\end{exer}
+
+\begin{exer}
+Using the twelve configurations in Figure 1.38, define a transformation different from the one described in Exercise 1.30 which can be modeled by a digraph but not by a graph.
+\end{exer}
+
+\begin{exer}
+Let $S$ and $A$ be two finite nonempty sets of integers. Define a digraph $D$ with $V(D) = A$, where $(x,y)$ is an arc of $D$ if $x \neq y$ and $y-x \in S$.
+\begin{enumerate}[{(a)}]
+\item Draw the digraph $D$ for $A = \{0,1,2,3,4\}$ and $S = \{-2,1,2,4\}$.
+\item What can be said about $D$ if $A$ and $S$ consist only of odd integers?
+\item How can the question in (b) be generalized?
+\item If $|A| = |S| = 5$, how large can the size of $D$ be?
+\end{enumerate}
+\end{exer}
+
+\begin{exer}
+A digraph $D$ has vertex set $\{-3,3,6,12\}$ and $(i,j) \in E(D)$ if $i \neq j$ and $i \div j$, that is, $j$ is a multiple of $i$. Draw the digraph $D$.
+\end{exer}

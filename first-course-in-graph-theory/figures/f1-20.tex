@@ -1,0 +1,35 @@
+\begin{figure}[h]
+	\centering
+	\[G:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}
+			\vertex (r) at (0,2) [label=left:$r$]{};
+			\vertex (s) at (1,2) [label=above:$s$]{};
+			\vertex (t) at (2,2) [label=right:$t$]{};
+			\vertex (u) at (0,1) [label=left:$u$]{};
+			\vertex (v) at (1,1) [label=315:$v$]{};
+			\vertex (w) at (2,1) [label=right:$w$]{};
+			\vertex (x) at (0,0) [label=left:$x$]{};
+			\vertex (y) at (1,0) [label=below:$y$]{};
+			\vertex (z) at (2,0) [label=right:$z$]{};
+			\path
+				(r) edge (s)
+				(r) edge (u)
+				(r) edge (v)
+				(s) edge (t)
+				(s) edge (v)
+				(t) edge (v)
+				(t) edge (w)
+				(u) edge (v)
+				(u) edge (x)
+				(v) edge (w)
+				(v) edge (y)
+				(w) edge (z)
+				(x) edge (y)
+				(y) edge (z)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{The graph $G$ in Exercises 1.11 and 1.12}
+\end{figure}

@@ -1,0 +1,57 @@
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\[G:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\vertex (BAD) at (0,.5){};
+				\vertex (BAR) at (.5,0){};
+				\vertex (BIT) at (.5,1){};
+				\vertex (BAT) at (1,.5){};
+				\vertex (HAT) at (1.5,0){};
+				\vertex (BUT) at (1.5,1){};
+				\vertex (CAT) at (2,.5){};
+				\path
+					(BAD) edge (BAR)
+					(BAD) edge (BAT)
+					(BAR) edge (BAT)
+					(BIT) edge (BUT)
+					(BIT) edge (BAT)
+					(BUT) edge (BAT)
+					(HAT) edge (BAT)
+					(HAT) edge (CAT)
+					(CAT) edge (BAT)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.4\textwidth}
+		\[\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+				\vertex (BAD) at (0,.5) [label=left:$BAD$]{};
+				\vertex (BAR) at (.5,0) [label=left:$BAR$]{};
+				\vertex (BIT) at (.5,1) [label=left:$BIT$]{};
+				\vertex (BAT) at (1,.5) [label=below:$BAT$]{};
+				\vertex (HAT) at (1.5,0) [label=right:$HAT$]{};
+				\vertex (BUT) at (1.5,1) [label=right:$BUT$]{};
+				\vertex (CAT) at (2,.5) [label=right:$CAT$]{};
+				\path
+					(BAD) edge (BAR)
+					(BAD) edge (BAT)
+					(BAR) edge (BAT)
+					(BIT) edge (BUT)
+					(BIT) edge (BAT)
+					(BUT) edge (BAT)
+					(HAT) edge (BAT)
+					(HAT) edge (CAT)
+					(CAT) edge (BAT)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}
+	\caption{A word graph}
+\end{figure}

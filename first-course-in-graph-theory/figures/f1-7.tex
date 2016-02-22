@@ -1,0 +1,38 @@
+\begin{figure}[h]
+	\[G:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+			\vertex (AIM) at (0,1.5) [label=above:$AIM$]{};
+			\vertex (ARM) at (1,1.5) [label=above:$ARM$]{};
+			\vertex (ACT) at (2,0) [label=below:$ACT$]{};
+			\vertex (ART) at (2,1) [label=left:$ART$]{};
+			\vertex (ARC) at (2,2) [label=above:$ARC$]{};
+			\vertex (CAT) at (3,0) [label=below:$CAT$]{};
+			\vertex (RAT) at (3,1) [label=above:$RAT$]{};
+			\vertex (OAT) at (4,.5) [label=above:$OAT$]{};
+			\vertex (OAR) at (5,.5) [label=below:$OAR$]{};
+			\vertex (CAR) at (6,0) [label=below:$CAR$]{};
+			\vertex (TAR) at (6,1) [label=above:$TAR$]{};
+			\path
+				(AIM) edge (ARM)
+				(ARM) edge (ART)
+				(ARM) edge (ARC)
+				(ACT) edge (ART)
+				(ACT) edge (CAT)
+				(ART) edge (ARC)
+				(ART) edge (RAT)
+				(CAT) edge (RAT)
+				(CAT) edge (OAT)
+				(CAT) edge (CAR)
+				(RAT) edge (OAT)
+				(RAT) edge (TAR)
+				(OAT) edge (OAR)
+				(OAR) edge (CAR)
+				(OAR) edge (TAR)
+				(CAR) edge (TAR)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{The word graph of a set of 11 words}
+\end{figure}

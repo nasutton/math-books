@@ -1,0 +1,97 @@
+\begin{figure}[h]
+	\centering
+	%K1
+	\begin{subfigure}[b]{.2\textwidth}
+		\[K_{1}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0} {
+					\setcounter{Angle}{90 + \i * 360 / 1};
+					\vertex (\i) at (\theAngle:1){};
+				}
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K2
+	\begin{subfigure}[b]{.2\textwidth}
+		\[K_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1} {
+					\setcounter{Angle}{90 + \i * 360 / 2};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (1)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K3
+	\begin{subfigure}[b]{.2\textwidth}
+		\[K_{3}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2} {
+					\setcounter{Angle}{90 + \i * 360 / 3};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (1)
+					(0) edge (2)
+					(1) edge (2)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[K_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (1)
+					(0) edge (2)
+					(0) edge (3)
+					(1) edge (2)
+					(1) edge (3)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K5
+	\begin{subfigure}[b]{.2\textwidth}
+		\[K_{5}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3,4} {
+					\setcounter{Angle}{18 + \i * 360 / 5};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (1)
+					(0) edge (2)
+					(0) edge (3)
+					(0) edge (4)
+					(1) edge (2)
+					(1) edge (3)
+					(1) edge (4)
+					(2) edge (3)
+					(2) edge (4)
+					(3) edge (4)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{Complete graphs}
+\end{figure}

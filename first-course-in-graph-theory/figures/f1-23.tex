@@ -1,0 +1,158 @@
+\begin{figure}[h]
+	\centering
+	%P4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[P_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\vertex (\i) at (\i,0){};
+				}
+				\path
+					(0) edge (1)
+					(1) edge (2)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[P_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\vertex (\i) at (0,\i){};
+				}
+				\path
+					(0) edge (1)
+					(1) edge (2)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[P_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (0) at (0,1){};
+				\vertex (1) at (.5,0){};
+				\vertex (2) at (1,1){};
+				\vertex (3) at (1.5,0){};
+				\path
+					(0) edge (1)
+					(1) edge (2)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[P_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (3)
+					(1) edge (2)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P4
+	\begin{subfigure}[b]{.2\textwidth}
+		\[P_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (2)
+					(1) edge (3)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	
+	%K4
+	\begin{subfigure}[b]{.3\textwidth}
+		\[K_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2,3} {
+					\setcounter{Angle}{45 + \i * 360 / 4};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\path
+					(0) edge (1)
+					(0) edge (2)
+					(0) edge (3)
+					(1) edge (2)
+					(1) edge (3)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K4
+	\begin{subfigure}[b]{.3\textwidth}
+		\[K_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2} {
+					\setcounter{Angle}{30 + \i * 360 / 3};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\vertex (3) at (0,0){};
+				\path
+					(0) edge (1)
+					(0) edge (2)
+					(0) edge (3)
+					(1) edge (2)
+					(1) edge (3)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K4
+	\begin{subfigure}[b]{.3\textwidth}
+		\[K_{4}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i in {0,1,2} {
+					\setcounter{Angle}{30 + \i * 360 / 3};
+					\vertex (\i) at (\theAngle:1){};
+				}
+				\vertex (3) at (0,0){};
+				\path
+					(0) edge[bend right=20] (1)
+					(0) edge[bend left=20] (2)
+					(0) edge (3)
+					(1) edge[bend right=20] (2)
+					(1) edge (3)
+					(2) edge (3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{The graphs $P_{4}$ and $K_{4}$}
+\end{figure}

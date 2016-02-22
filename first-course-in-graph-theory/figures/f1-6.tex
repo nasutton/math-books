@@ -1,0 +1,37 @@
+\begin{figure}[h]
+	\[F:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+			\foreach \i/\j in {-1/1, -2/2, -3/3, 8/4, 7/5, 6/6, 5/7, 4/8, 3/9, 2/10, 1/11, 0/12} {
+				\setcounter{Angle}{90 + \i * 360 / 12};
+				\vertex (c\j) at (\theAngle:1) [label=\theAngle:$c_{\j}$]{};
+			}
+			\path
+				(c1) edge (c2)
+				(c1) edge (c3)
+				(c1) edge (c7)
+				(c1) edge (c11)
+				(c1) edge (c12)
+				(c2) edge (c4)
+				(c2) edge (c8)
+				(c3) edge (c4)
+				(c3) edge (c9)
+				(c4) edge (c5)
+				(c4) edge (c6)
+				(c4) edge (c10)
+				(c5) edge (c7)
+				(c5) edge (c11)
+				(c6) edge (c7)
+				(c6) edge (c12)
+				(c7) edge (c8)
+				(c7) edge (c9)
+				(c8) edge (c10)
+				(c9) edge (c10)
+				(c10) edge (c11)
+				(c10) edge (c12)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{Modeling transformations of twelve configurations}
+\end{figure}

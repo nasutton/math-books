@@ -1,0 +1,17 @@
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+		\foreach \i in {1,2,3,4,5} {
+			\setcounter{Angle}{90 + \i * 360 / 5};
+			\vertex (\i) at (\theAngle:.75){};
+		}
+		\path
+			(1) edge (2)
+			(1) edge (5)
+			(2) edge (3)
+			(3) edge (4)
+			(4) edge (5)
+		;
+	\end{tikzpicture}
+	\caption{The graph in Exercise 1.7(c)}
+\end{figure}

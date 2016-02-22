@@ -1,0 +1,53 @@
+\begin{figure}[h]
+	\centering
+	%H
+	\begin{subfigure}[b]{.5\textwidth}
+		\[H:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (u) at (2,3) [label=above:$u$]{};
+				\vertex (v) at (0,1) [label=left:$v$]{};
+				\vertex (w) at (4,1) [label=right:$w$]{};
+				\vertex (x) at (2,2) [label=above:$x$]{};
+				\vertex (y) at (1,0) [label=left:$y$]{};
+				\vertex (z) at (3,0) [label=right:$z$]{};
+				\path
+					(u) edge (v)
+					(u) edge (w)
+					(v) edge (x)
+					(w) edge (x)
+					(x) edge (y)
+					(x) edge (z)
+					(y) edge (z)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%H complement
+	\begin{subfigure}[b]{.5\textwidth}
+		\[\overline{H}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (u) at (2,3) [label=above:$u$]{};
+				\vertex (v) at (0,1) [label=left:$v$]{};
+				\vertex (w) at (4,1) [label=right:$w$]{};
+				\vertex (x) at (2,2) [label=below:$x$]{};
+				\vertex (y) at (1,0) [label=left:$y$]{};
+				\vertex (z) at (3,0) [label=right:$z$]{};
+				\path
+					(u) edge (x)
+					(u) edge (y)
+					(u) edge (z)
+					(v) edge (w)
+					(v) edge (y)
+					(v) edge (z)
+					(w) edge (y)
+					(w) edge (z)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{A graph and its complement}
+\end{figure}

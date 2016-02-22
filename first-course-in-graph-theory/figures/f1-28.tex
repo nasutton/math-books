@@ -1,0 +1,78 @@
+\begin{figure}[h]
+	\centering
+	\captionsetup[subfigure]{labelformat=empty}
+	%K1,3
+	\begin{subfigure}[b]{.2\textwidth}
+		\begin{tikzpicture}
+			\vertex (0) at (1,1){};
+			\vertex (1) at (0,0){};
+			\vertex (2) at (1,0){};
+			\vertex (3) at (2,0){};
+			\path
+				(0) edge (1)
+				(0) edge (2)
+				(0) edge (3)
+			;
+		\end{tikzpicture}
+		\caption{$K_{1,3}$}
+	\end{subfigure}%
+	%K2,2
+	\begin{subfigure}[b]{.2\textwidth}
+		\begin{tikzpicture}
+			\vertex (0) at (0,1){};
+			\vertex (1) at (1,1){};
+			\vertex (2) at (0,0){};
+			\vertex (3) at (1,0){};
+			\path
+				(0) edge (2)
+				(0) edge (3)
+				(1) edge (2)
+				(1) edge (3)
+			;
+		\end{tikzpicture}
+		\caption{$K_{2,2}$}
+	\end{subfigure}%
+	%K2,3
+	\begin{subfigure}[b]{.2\textwidth}
+		\begin{tikzpicture}
+			\vertex (0) at (0,1){};
+			\vertex (1) at (2,1){};
+			\vertex (2) at (0,0){};
+			\vertex (3) at (1,0){};
+			\vertex (4) at (2,0){};
+			\path
+				(0) edge (2)
+				(0) edge (3)
+				(0) edge (4)
+				(1) edge (2)
+				(1) edge (3)
+				(1) edge (4)
+			;
+		\end{tikzpicture}
+		\caption{$K_{2,3}$}
+	\end{subfigure}%
+	%K3,3
+	\begin{subfigure}[b]{.2\textwidth}
+		\begin{tikzpicture}
+			\vertex (0) at (0,1){};
+			\vertex (1) at (1,1){};
+			\vertex (2) at (2,1){};
+			\vertex (3) at (0,0){};
+			\vertex (4) at (1,0){};
+			\vertex (5) at (2,0){};
+			\path
+				(0) edge (3)
+				(0) edge (4)
+				(0) edge (5)
+				(1) edge (3)
+				(1) edge (4)
+				(1) edge (5)
+				(2) edge (3)
+				(2) edge (4)
+				(2) edge (5)
+			;
+		\end{tikzpicture}
+		\caption{$K_{3,3}$}
+	\end{subfigure}
+	\caption{Complete bipartite graphs}
+\end{figure}

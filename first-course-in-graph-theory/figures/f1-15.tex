@@ -1,0 +1,103 @@
+\begin{figure}[h]
+	\centering
+	%G
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[G:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[scale=.75]
+				\vertex (u) at (90:3) [label=right:$u$]{};
+				\vertex (v) at (90:1.5) [label=right:$v$]{};
+				\vertex (w) at (180:1) [label=left:$w$]{};
+				\vertex (x) at (0:1) [label=right:$x$]{};
+				\vertex (y) at (270:1.5) [label=below:$y$]{};
+				\path
+					(u) edge (v)
+					(v) edge (w)
+					(v) edge (x)
+					(v) edge node[right]{$e$} (y)
+					(w) edge (y)
+					(x) edge node[pos=.4,right]{$e'$} (y)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%H
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[H:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[scale=.75]
+				\vertex (v) at (90:1.5) [label=right:$v$]{};
+				\vertex (w) at (180:1) [label=left:$w$]{};
+				\vertex (x) at (0:1) [label=right:$x$]{};
+				\vertex (y) at (270:1.5) [label=below:$y$]{};
+				\path
+					(v) edge (w)
+					(w) edge (y)
+					(x) edge (y)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%F
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[F:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[scale=.75]
+				\vertex (v) at (90:1.5) [label=right:$v$]{};
+				\vertex (w) at (180:1) [label=left:$w$]{};
+				\vertex (x) at (0:1) [label=right:$x$]{};
+				\path
+					(v) edge (w)
+					(v) edge (x)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	
+	%F'
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\[F':
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[scale=.75]
+				\vertex (v) at (90:1.5) [label=right:$v$]{};
+				\vertex (x) at (0:1) [label=right:$x$]{};
+				\vertex (y) at (270:1.5) [label=below:$y$]{};
+				\path
+					(v) edge node[right]{$e$} (y)
+					(x) edge node[pos=.4,right]{$e'$} (y)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%G-e
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\[G-e:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[scale=.75]
+				\vertex (u) at (90:3) [label=right:$u$]{};
+				\vertex (v) at (90:1.5) [label=right:$v$]{};
+				\vertex (w) at (180:1) [label=left:$w$]{};
+				\vertex (x) at (0:1) [label=right:$x$]{};
+				\vertex (y) at (270:1.5) [label=below:$y$]{};
+				\path
+					(u) edge (v)
+					(v) edge (w)
+					(v) edge (x)
+					(w) edge (y)
+					(x) edge (y)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{A graph $G$ and some of its subgraphs}
+\end{figure}

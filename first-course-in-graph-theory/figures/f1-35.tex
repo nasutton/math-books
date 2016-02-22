@@ -1,0 +1,81 @@
+\begin{figure}[h]
+	\centering
+	\captionsetup[subfigure]{labelformat=empty}
+	%M1
+	\begin{subfigure}[b]{.25\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\vertex (0) at (0,0){};
+			\vertex (1) at (.5,1){};
+			\vertex (2) at (1,0){};
+			\vertex (3) at (1.5,1){};
+			\path
+				(0) edge (1)
+				(0) edge[bend left=20] (1)
+				(0) edge (2)
+				(0) edge[bend right=20] (2)
+				(1) edge (2)
+				(2) edge (3)
+			;
+		\end{tikzpicture}
+		\caption{$M_{1}$}
+	\end{subfigure}%
+	%M2
+	\begin{subfigure}[b]{.25\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\foreach \i in {0,1,2,3} {
+				\setcounter{Angle}{45 + \i * 360 / 4};
+				\vertex (\i) at (\theAngle:1){};
+			}
+			\path
+				(0) edge (1)
+				(0) edge[bend left=20] (3)
+				(0) edge[bend right=20] (3)
+				(1) edge (2)
+				(1) edge[bend left=20] (3)
+				(1) edge (3)
+				(1) edge[bend right=20] (3)
+				(2) edge (3)
+			;
+		\end{tikzpicture}
+		\caption{$M_{2}$}
+	\end{subfigure}%
+	%M3
+	\begin{subfigure}[b]{.25\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\foreach \i in {0,1,2,3} {
+				\setcounter{Angle}{45 + \i * 360 / 4};
+				\vertex (\i) at (\theAngle:1){};
+			}
+			\path
+				(0) edge[loop,in=45,out=315,looseness=10] (0)
+				(0) edge[loop,in=45,out=315,looseness=20] (0)
+				(0) edge (1)
+				(1) edge (2)
+				(1) edge[bend left=20] (3)
+				(1) edge[bend right=20] (3)
+				(2) edge[loop,in=225,out=135,looseness=10] (2)
+			;
+		\end{tikzpicture}
+		\caption{$M_{3}$}
+	\end{subfigure}%
+	%M4
+	\begin{subfigure}[b]{.25\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\foreach \i in {0,1,2,3} {
+				\setcounter{Angle}{45 + \i * 360 / 4};
+				\vertex (\i) at (\theAngle:1){};
+			}
+			\path
+				(0) edge (1)
+				(1) edge (2)
+				(1) edge (3)
+			;
+		\end{tikzpicture}
+		\caption{$M_{4}$}
+	\end{subfigure}
+	\caption{Multigraphs and pseudographs}
+\end{figure}

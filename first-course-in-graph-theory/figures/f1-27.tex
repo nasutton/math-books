@@ -1,0 +1,20 @@
+\begin{figure}[h]
+	\[C_{5}:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}
+			\foreach \i/\j in {0/1, -1/2, 3/3, 2/4, 1/5} {
+				\setcounter{Angle}{90 + \i * 360 / 5};
+				\vertex (v\j) at (\theAngle:1) [label=\theAngle:$v_{\j}$]{};
+			}
+			\path
+				(v1) edge (v2)
+				(v1) edge (v5)
+				(v2) edge (v3)
+				(v3) edge (v4)
+				(v4) edge (v5)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{A 5-cycle: A graph that is not bipartite}
+\end{figure}

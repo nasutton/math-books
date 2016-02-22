@@ -1,0 +1,15 @@
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+		\foreach \i in {1,2,3,4,5} {
+			\vertex (\i) at (\i,0){};
+		}
+		\path
+			(1) edge (2)
+			(2) edge (3)
+			(3) edge (4)
+			(4) edge (5)
+		;
+	\end{tikzpicture}
+	\caption{The graph in Exercise 1.7(b)}
+\end{figure}

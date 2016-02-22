@@ -1,0 +1,32 @@
+\begin{figure}[h]
+	\[G:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}[x=1.5cm, y=1.5cm]
+			\foreach \i/\j in {0/1, -1/2, -2/3, 6/4, 5/5, 4/6, 3/7, 2/8, 1/9} {
+				\setcounter{Angle}{90 + \i * 360 / 9};
+				\vertex (L\j) at (\theAngle:1) [label=\theAngle:$L\j$]{};
+			}
+			\path
+				(L1) edge (L4)
+				(L1) edge (L7)
+				(L1) edge (L8)
+				(L1) edge (L9)
+				(L2) edge (L4)
+				(L2) edge (L5)
+				(L2) edge (L6)
+				(L2) edge (L8)
+				(L2) edge (L9)
+				(L3) edge (L6)
+				(L3) edge (L9)
+				(L4) edge (L6)
+				(L4) edge (L7)
+				(L4) edge (L8)
+				(L5) edge (L8)
+				(L6) edge (L8)
+				(L6) edge (L9)
+			;
+		\end{tikzpicture}
+	}\]
+	\caption{The graph $G$ in Example 1.5}
+\end{figure}

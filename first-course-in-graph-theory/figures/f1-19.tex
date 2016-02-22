@@ -1,0 +1,78 @@
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\[H:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (q) at (1,2) [label=above:$q$]{};
+				\vertex (r) at (2,2) [label=above:$r$]{};
+				\vertex (s) at (3,2) [label=above:$s$]{};
+				\fvertex (t) at (0,1) [label=left:$t$]{};
+				\vertex (u) at (1,1) [label=135:$u$]{};
+				\vertex (v) at (2,1) [label=45:$v$]{};
+				\vertex (w) at (3,1) [label=right:$w$]{};
+				\vertex (x) at (0,0) [label=below:$x$]{};
+				\vertex (y) at (1,0) [label=below:$y$]{};
+				\vertex (z) at (2,0) [label=below:$z$]{};
+				\path
+					(q) edge (r)
+					(q) edge (u)
+					(r) edge (s)
+					(r) edge (u)
+					(r) edge (v)
+					(s) edge (w)
+					(t) edge (u)
+					(t) edge (x)
+					(u) edge (v)
+					(u) edge (x)
+					(u) edge (y)
+					(v) edge (w)
+					(v) edge (z)
+					(x) edge (y)
+					(y) edge (z)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.4\textwidth}
+		\[\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (q) at (0,1) [label=left:$q$]{};
+				\vertex (r) at (1,1) [label=135:$r$]{};
+				\vertex (s) at (.5,0) [label=below:$s$]{};
+				\fvertex (t) at (1.5,3) [label=above:$t$]{};
+				\vertex (u) at (1,2) [label=left:$u$]{};
+				\vertex (v) at (2,1) [label=right:$v$]{};
+				\vertex (w) at (1.5,0) [label=below:$w$]{};
+				\vertex (x) at (2,2) [label=right:$x$]{};
+				\vertex (y) at (3,1) [label=right:$y$]{};
+				\vertex (z) at (2.5,0) [label=below:$z$]{};
+				\draw[dotted] (.5,1.75)--(.5,2.25)--(2.5,2.25)--(2.5,1.75)--cycle;
+				\draw[dotted] (-.5,.75)--(-.5,1.25)--(3.5,1.25)--(3.5,.75)--cycle;
+				\draw[dotted] (0,-.25)--(0,.25)--(3,.25)--(3,-.25)--cycle;
+				\path
+					(q) edge (r)
+					(q) edge (u)
+					(r) edge (s)
+					(r) edge (u)
+					(r) edge (v)
+					(s) edge (w)
+					(t) edge (u)
+					(t) edge (x)
+					(u) edge (v)
+					(u) edge (x)
+					(u) edge (y)
+					(v) edge (w)
+					(v) edge (z)
+					(x) edge (y)
+					(y) edge (z)
+				;
+			\end{tikzpicture}
+		}\]
+		\caption{}
+	\end{subfigure}
+	\caption{Distances from a given vertex}
+\end{figure}

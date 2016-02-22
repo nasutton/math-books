@@ -1,0 +1,60 @@
+\begin{figure}[h]
+	\centering
+	%P3
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[P_{3}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {0/w,1/v,2/u} {
+					\vertex (\j1) at (0,\i) [label=right:$\j_{1}$]{};
+				}
+				\path
+					(u1) edge (v1)
+					(v1) edge (w1)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%K2
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[K_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {.5/v,1.5/u} {
+					\vertex (\j2) at (0,\i) [label=right:$\j_{2}$]{};
+				}
+				\path
+					(u2) edge (v2)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%P3xK2
+	\begin{subfigure}[b]{.3\textwidth}
+		\centering
+		\[P_{3} \times K_{2}:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\foreach \i/\j in {0/w,1/v,2/u} {
+					\vertex (\j1u2) at (0,\i) [label=left:$\j_{1}u_{2}$]{};
+					\vertex (\j1v2) at (1,\i) [label=right:$\j_{1}v_{2}$]{};
+				}
+				\path
+					(u1u2) edge (u1v2)
+					(u1u2) edge (v1u2)
+					(u1v2) edge (v1v2)
+					(v1u2) edge (v1v2)
+					(v1u2) edge (w1u2)
+					(v1v2) edge (w1v2)
+					(w1u2) edge (w1v2)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
+	\caption{The Cartesian product of two graphs}
+\end{figure}
