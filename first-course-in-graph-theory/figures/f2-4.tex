@@ -1,3 +1,46 @@
 \begin{figure}[h]
+	\centering
+	%G
+	\begin{subfigure}[b]{.4\textwidth}
+		\[G:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}
+				\vertex (u1) at (135:1) [label=above:$u_{1}$]{};
+				\vertex (u2) at (45:1) [label=below:$u_{2}$]{};
+				\vertex (u3) at (225:1) [label=below:$u_{3}$]{};
+				\vertex (u4) at (315:1) [label=below:$u_{4}$]{};
+				\path
+					(u1) edge (u2)
+					(u1) edge[bend left=20] (u3)
+					(u1) edge (u3)
+					(u1) edge[bend right=20] (u3)
+					(u2) edge[loop,in=45,out=315,looseness=10] (u2)
+					(u2) edge[loop,in=135,out=45,looseness=10] (u2)
+					(u2) edge (u3)
+					(u3) edge[bend left=20] (u4)
+					(u3) edge[bend right=20] (u4)
+					(u4) edge[loop,in=45,out=315,looseness=10] (u4)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}%
+	%D
+	\begin{subfigure}[b]{.4\textwidth}
+		\[D:
+		\raisebox{-.5\height}
+		{
+			\begin{tikzpicture}[every edge/.style={draw,postaction={decorate,decoration={markings,mark=at position 0.5 with {\arrow[scale=2]{>}}}}}]
+				\vertex (v1) at (90:1) [label=above:$v_{1}$]{};
+				\vertex (v2) at (210:1) [label=below:$v_{2}$]{};
+				\vertex (v3) at (330:1) [label=below:$v_{3}$]{};
+				\path
+					(v1) edge[bend left=20] (v2)
+					(v2) edge[bend left=20] (v1)
+					(v2) edge (v3)
+				;
+			\end{tikzpicture}
+		}\]
+	\end{subfigure}
 	\caption{Illustrating degrees in a multigraph and a digraph}
 \end{figure}

@@ -1,3 +1,23 @@
 \begin{figure}[h]
+	\centering
+	\[G:
+	\raisebox{-.5\height}
+	{
+		\begin{tikzpicture}
+			\vertex (u) at (4,1) [label=above:$u$,label=below:$0$]{};
+			\vertex (v) at (3,1) [label=above:$v$,label=below:$1$]{};
+			\vertex (w) at (2,1) [label=above:$w$,label=below:$4$]{};
+			\vertex (x) at (0,1) [label=above:$x$,label=below:$2$]{};
+			\vertex (y) at (1,0) [label=above:$2$,label=below:$y$]{};
+			\vertex (z) at (1,2) [label=above:$z$,label=below:$1$]{};
+			\path
+				(v) edge (w)
+				(w) edge (x)
+				(w) edge (y)
+				(w) edge (z)
+				(x) edge (y)
+			;
+		\end{tikzpicture}
+	}\]
 	\caption{A graph $G$ with $\delta(G)=0$ and $\Delta(G)=4$}
 \end{figure}
